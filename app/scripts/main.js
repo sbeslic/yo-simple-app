@@ -1,9 +1,20 @@
-console.log('\'Allo \'Allo!');
+$(document).ready(function () {
+  // init masonry
+  var $grid = $('.js-masonry').masonry({
+    itemSelector: '.grid-item',
+    columnWidth: $(this).find('.grid-sizer')[0],
+    percentPosition: true
+  });
 
-// Uncomment to enable Bootstrap tooltips
-// https://getbootstrap.com/docs/4.0/components/tooltips/#example-enable-tooltips-everywhere
-// $(function () { $('[data-toggle="tooltip"]').tooltip(); });
+  // layout Masonry after each image loads
+  $grid.imagesLoaded().progress(function () {
+    $grid.masonry('layout');
+  });
 
-// Uncomment to enable Bootstrap popovers
-// https://getbootstrap.com/docs/4.0/components/popovers/#example-enable-popovers-everywhere
-// $(function () { $('[data-toggle="popover"]').popover(); });
+  // scroll down on jumbotron arrow icon click
+  $(".js-click").click(function () {
+    $('html, body').animate({
+      scrollTop: $(".footer").offset().top
+    }, 800);
+  });
+});

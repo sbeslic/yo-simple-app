@@ -1,0 +1,184 @@
+.f-jumbo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $alto;
+  min-height: 810px;
+  color: var(--white);
+  text-align: center;
+
+  &__title {
+    @include font-control(.6875rem, 700, 1.5rem, false);
+    font-family: $ff-alt;
+    letter-spacing: 3.4px;
+    margin-bottom: .875rem;
+    text-transform: uppercase;
+  }
+
+  &__lead {
+    @include font-control(2.5rem, 300, 3.625rem, false);
+    margin-bottom: 1.75rem;
+
+    &--sub {
+      @include font-control(1rem, 300, 1.25rem, false);
+    }
+  }
+
+  &__arrow {
+    font-size: 1.875rem;
+    padding: 30px 10px;
+    cursor: pointer;
+    display: inline-block;
+  }
+}
+
+.f-section {
+  background-color: $white;
+  padding: 73px 0 94px;
+  text-align: center;
+
+  &--two-columns {
+    padding: 0;
+    text-align: left;
+    background-color: transparent;
+    display: flex;
+
+    @include media-breakpoint-down(md) {
+      flex-wrap: wrap;
+    }
+
+    .column {
+      padding: 140px 0;
+      flex-grow: 1;
+      flex-basis: 50%;
+
+      @include media-breakpoint-down(md) {
+        flex-basis: 100%;
+      }
+    }
+
+    .column-left {
+      background-color: $alto;
+    }
+
+    .column-right {
+      background-color: $wild-sand;
+    }
+  }
+
+  &--nav {
+    padding: 87px 0 0;
+  }
+
+  &__title {
+    color: $mine-shaft;
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 2.75rem;
+    padding: 0 78px;
+    margin-bottom: 39px;
+  }
+
+  &__lead {
+    color: $boulder;
+    font-size: .9375rem;
+    line-height: 1.875rem;
+    font-weight: 300;
+    padding: 0 78px;
+  }
+}
+
+.f-nav {
+  display: flex;
+  justify-content: center;
+  margin: 55px 0 59px;
+
+
+  &__item {
+    @include font-control(.6875rem, 700, .6875rem, $curious-blue);
+    font-family: "Raleway";
+    letter-spacing: 3.4px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:not(:last-of-type) {
+      margin-right: 54px;
+
+      @include media-breakpoint-down(md) {
+        margin-right: 20px;
+      }
+
+      @include media-breakpoint-down(xs) {
+        margin-right: 0;
+      }
+    }
+
+    @include media-breakpoint-down(xs) {
+      flex-basis: 100%;
+      margin: 10px 0;
+    }
+
+    &.active,
+    &:hover {
+      span:after {
+        content: '';
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        right: 0;
+        background-color: $curious-blue;
+      }
+    }
+
+    span {
+      position: relative;
+    }
+  }
+}
+
+.f-masonry {
+  background: $alto;
+
+  .grid-sizer,
+  .grid-item {
+    width: 100%;
+
+    @include media-breakpoint-up(sm) {
+      width: 50%;
+    }
+
+    @include media-breakpoint-up(md) {
+      width: 33.33%;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 25%;
+    }
+
+    @include media-breakpoint-up(xl) {
+      width: calc(100% / 5);
+    }
+  }
+
+  .grid-item {
+    padding: 22.5px 18px;
+    border: 1px solid $black;
+
+    img {
+      margin: 0 auto;
+      display: block;
+    }
+
+    &:nth-child(even) {
+      background-color: lighten($color: $alto, $amount: 7);
+    }
+
+    &:nth-child(odd) {
+      background-color: darken($color: $alto, $amount: 7);
+    }
+  }
+}

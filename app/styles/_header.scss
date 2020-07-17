@@ -1,0 +1,58 @@
+header {
+  background-color: $alto;
+}
+
+.f-navbar {
+  padding: 0 100px;
+  height: $header-height;
+
+  @include media-breakpoint-down(lg) {
+    height: auto;
+    padding: 20px 30px;
+  }
+
+  .f-navbar-nav {
+    margin-left: auto;
+
+    @include media-breakpoint-down(lg) {
+      padding-top: 40px;
+      text-align: center;
+    }
+
+    .nav-item {
+      &:not(:last-of-type) {
+        margin-right: 25px;
+
+        @include media-breakpoint-down(lg) {
+          margin: 5px 0;
+        }
+      }
+    }
+
+    .nav-link {
+      @include font-control(.6875rem, false, 1.1875rem, $white);
+      letter-spacing: 3.4px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.f-searchbox {
+  &__btn {
+    margin-left: calc(90px - .75rem);
+  }
+
+  &__icon {
+    font-size: 1.4375rem;
+
+    &:hover {
+      &:before {
+        color: $black;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    display: none;
+  }
+}
