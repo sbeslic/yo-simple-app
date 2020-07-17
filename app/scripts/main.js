@@ -12,9 +12,9 @@ $(document).ready(function () {
   });
 
   // scroll down on jumbotron arrow icon click
-  $(".js-click").click(function () {
+  $('.js-click').click(function () {
     $('html, body').animate({
-      scrollTop: $(".footer").offset().top
+      scrollTop: $('.footer').offset().top
     }, 800);
   });
 });
