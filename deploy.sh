@@ -1,18 +1,22 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
-# abort on errors
+# If a command fails then the deploy stops
 set -e
 
-# build
-npm run build
+printf "\033[0;32mDeploying updates to GitHub...\033[0m\n"
 
-# navigate into the build output directory
-cd app
+# Go To Public folder
+cd dist
 
-git init
-git add -A
-git commit -m 'deploy'
+# Add changes to git.
+git add .
 
-git push -f git@github.com:sbeslic/yo-simple-app.git master:gh-pages
+# Commit changes.
+msg="rebuilding site $(date)"
+if [ -n "$*" ]; then
+	msg="$*"
+fi
+git commit -m "$msg"
 
-cd -
+# Push source and build repos.
+git push origin master
