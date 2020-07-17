@@ -1,1 +1,0 @@
-"use strict";$(document).ready(function(){var o=$(".js-masonry").masonry({itemSelector:".grid-item",columnWidth:$(this).find(".grid-sizer")[0],percentPosition:!0});o.imagesLoaded().progress(function(){o.masonry("layout")}),$(".js-click").click(function(){$("html, body").animate({scrollTop:$(".footer").offset().top},800)})});

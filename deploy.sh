@@ -6,7 +6,7 @@ set -e
 printf "\033[0;32mDeploying updates to GitHub...\033[0m\n"
 
 # Go To Public folder
-cd dist
+cd app
 
 # Add changes to git.
 git add .

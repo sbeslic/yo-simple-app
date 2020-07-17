@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
   // init masonry
   var $grid = $('.js-masonry').masonry({
     itemSelector: '.grid-item',
