@@ -10,6 +10,7 @@ Simple HTML/CSS app built with yeoman generator-webapp
 - Clone this repo to your local machine using `https://github.com/sbeslic/yo-simple-app.git`
 
 ### Getting Started
+- Run `npm install` to install packages and other dependencies
 
 - Run `npm start` to preview and watch for changes
 - Run `npm start -- --port=8080` to preview and watch for changes in port `8080`
